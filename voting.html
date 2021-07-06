@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        * {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h1 {
+  color: black;
+  text-align: center;
+  font-size: 40px;
+}
+
+.box {
+  background: rgba(231, 212, 204, 0.829);
+  width: 400px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 3px 0;
+  /* border-radius: 5px; */
+  border: 1px solid black;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.box label {
+  margin-right: 15px;
+}
+.box .button {
+  width: 200px;
+  height: 37px;
+  border: 0px solid #c6c6c6;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  cursor: pointer;
+  color: rgb(76, 146, 76);
+}
+.box input {
+  width: 60px;
+  padding: 5px 10px;
+  border: 0px solid #c6c6c6;
+  border-radius: 5px;
+  font-size: 20px;
+  margin: 0 70px 0 10px;
+}
+label {
+  font-size: 20px;
+  padding-right: 40px;
+}
+.box .button:active {
+  background: #ccc;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Vote Your Language!</h1>
+    <div class="box">
+        <input type="text" name="qty" id="1" value="0" class="input-field">
+        <label for="name">Mongo</label>
+        <div class="inc button">Click Here</div>
+    </div>
+
+    <div class="box">
+        <input type="text" name="qty" id="2" value="0" class="input-field">
+        <label for="name">Express</label>
+        <div class="inc button">Click Here</div>
+    </div>
+
+    <div class="box">
+        <input type="text" name="qty" id="3" value="0" class="input-field">
+        <label for="name">React</label>
+        <div class="inc button">Click Here</div>
+    </div>
+
+    <div class="box">
+        <input type="text" name="qty" id="4" value="0" class="input-field">
+        <label for="name">Node</label>
+        <div class="inc button">Click Here</div>
+    </div>
+
+    <script>
+        var incrementButton=document.getElementsByClassName('inc');
+      
+        for(var i=0; i < incrementButton.length; i++){
+            var button=incrementButton[i];
+            button.addEventListener('click',function(event){
+                var buttonClicked=event.target;
+               
+                var input=buttonClicked.parentElement.children[0];
+                console.log(input);
+                var inputValue=input.value;
+                
+                var newValue=parseInt(inputValue) + 1;
+                
+                input.value=newValue;
+            })
+        }
+    </script>
+</body>
+</html>

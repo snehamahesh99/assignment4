@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #qtybox{
+            width: 240px;
+            height: 200px;
+            background-color: rgb(196, 203, 221);
+            color: white;
+            text-align: center;
+            font-size: 40px;
+            border: none;
+           
+        }
+        #add,#sub,#reset{
+            width: 80px;
+            height: 30px;
+        color: white;
+        font-size: 20px;
+        border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="qtybox" readonly="" value="0">
+    <br> <br>
+    <button id="add" style="background-color: green;">+</button>
+    <button id="reset"style="background-color:yellow;">reset</button>
+    <button id="sub" style="background-color:red;">-</button>
+    
+    <script type="text/javascript">
+        let addbtn=document.getElementById("add");
+        let subbtn=document.getElementById("sub");
+        let resbtn=document.getElementById("reset")
+        let qty=document.getElementById("qtybox");
+
+        addbtn.addEventListener('click',()=>{
+            qty.value=parseInt(qty.value)+1;
+        });
+
+        subbtn.addEventListener('click',()=>{
+           
+        
+               qty.value=parseInt(qty.value)-1;
+           
+
+
+        });
+
+        resbtn.addEventListener('click',()=>
+        {
+            if((qty.value <= 0) || (qty.value>=0))
+           {
+               qty.value=0;
+           }
+        })
+    </script>
+</body>
+</html>

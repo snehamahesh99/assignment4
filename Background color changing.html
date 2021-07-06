@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            transition: all 1.5s ease-in-out;
+            text-align: center;
+            background-color: black;
+            color: blanchedalmond;
+        }
+        select{
+            padding:10px ;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello Word!</h1>
+    <br>
+            <select onchange="color(this.value)">
+               <option value="">color</option>
+            <option value="orangered">orangered</option>
+              <option value="blue" >blue</option>
+                <option value="pink"  >pink</option>
+            <option value="yellow">yellow</option>
+            </select>
+    
+    <script>
+        function color(value)
+        {
+           
+           
+          document.body.style.backgroundColor=value;
+        }
+      </script>
+</body>
+</html>
